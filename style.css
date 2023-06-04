@@ -1,0 +1,77 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 5fr;
+    margin:0px;
+
+}
+.header
+{
+    text-align: center;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    font-family: 'Cinzel', serif;
+    
+    grid-column:1/4;
+    grid-row:1/1;
+    
+}
+.gamearea
+{
+    grid-column:2/3;
+    grid-row:2/2;
+    justify-self: center;
+    align-self: center;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:10px;
+    
+    
+
+
+}
+.tile
+{
+    height:100px;
+    width:100px;
+    background-color: whitesmoke;
+    color: black;
+    font-size:medium;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    z-index:0;
+}
+
+.tile:hover{
+    background-color: azure;
+    color:blue;
+}
+.turn
+{
+    grid-column:3/4;
+    grid-row:2/2;
+    font-family: 'Lexend', sans-serif;
+    font-size: xx-large;
+    justify-self: left;
+    align-self: center;
+}
+article
+{
+    grid-column: 1/2;
+    grid-row:2/2;
+    justify-self: center;
+    align-self: center;
+    font-family: 'Lexend', sans-serif;
+    font-size: large;
+    padding: 30px;
+    line-height: 30px;
+    border-right:red 5px solid;
+    box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+    margin-left:5px;
+    border-radius: 20px;
+    
+}
