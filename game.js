@@ -130,6 +130,8 @@ const game =(()=>{
                 }
             }
         }
+        
+        movecount = movecount+1;
         if(movecount === 9)
         {
             gameover = true;
@@ -137,9 +139,8 @@ const game =(()=>{
             summondialog(`It's a draw! You both Lose!`);
             
         }
-        movecount++;
         changeTurn();
-        console.log(gameboard);
+        console.log(movecount);
         console.log(turn);
         updateUI();
         if(gameover)
