@@ -56,7 +56,7 @@ const game =(()=>{
                 console.log(turn + "wins!");
                 gameover = true;
                 cause += "win";
-                summondialog(`${turn} Wins Congratultions`);
+                summondialog(`${turn} Wins, Congratultions`);
                 
             }
         }
@@ -72,7 +72,7 @@ const game =(()=>{
                 console.log(turn + "wins!");
                 gameover = true;
                 cause += "win";
-                summondialog(`${turn} Wins Congratultions`);
+                summondialog(`${turn} Wins, Congratultions`);
                 
             }
         }
@@ -90,7 +90,7 @@ const game =(()=>{
                     console.log(turn + "wins!");
                     gameover = true;
                     cause += "win";
-                    summondialog(`${turn} Wins Congratultions`);
+                    summondialog(`${turn} Wins, Congratultions`);
                     
                 }
             }
@@ -108,7 +108,7 @@ const game =(()=>{
                     console.log(turn + " wins!");
                     gameover = true;
                     cause += "win";
-                    summondialog(`${turn} Wins Congratultions`);
+                    summondialog(`${turn} Wins, Congratultions`);
                     
                 }
             }
@@ -179,7 +179,7 @@ const game =(()=>{
                 console.log(turn + "wins!");
                 gameover = true;
                 cause += "win";
-                summondialog(`${turn} Wins Congratultions`);
+                summondialog(`${turn} Wins, Congratulations`);
                 
             }
         }
@@ -195,7 +195,7 @@ const game =(()=>{
                 console.log(turn + "wins!");
                 gameover = true;
                 cause += "win";
-                summondialog(`${turn} Wins Congratultions`);
+                summondialog(`${turn} Wins, Congratulations`);
                 
             }
         }
@@ -213,7 +213,7 @@ const game =(()=>{
                     console.log(turn + "wins!");
                     gameover = true;
                     cause += "win";
-                    summondialog(`${turn} Wins Congratultions`);
+                    summondialog(`${turn} Wins, Congratulations`);
                     
                 }
             }
@@ -231,7 +231,7 @@ const game =(()=>{
                     console.log(turn + " wins!");
                     gameover = true;
                     cause += "win";
-                    summondialog(`${turn} Wins Congratultions`);
+                    summondialog(`${turn} Wins, Congratulations`);
                     
                 }
             }
