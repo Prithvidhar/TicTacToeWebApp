@@ -26,6 +26,112 @@ const game =(()=>{
             turn = "X";
         }
     }
+    const aiMoveRandom = ()=>
+    {
+        var randNum = Math.floor(Math.random() * 10);
+        var tiles = document.querySelectorAll(".tile");
+        tileList = [...tiles];
+        tileNow = tileList[randNum];
+        console.log(tileList);
+        console.log("this is the num",randNum);
+        //selecting random tile to input element
+        while (tileNow.id[0] !== "E")
+        {
+            randNum = Math.floor(Math.random() * 8);
+            tileNow = tileList[randNum];
+            console.log("taken!");
+        }
+        //updating gameboard
+        var row = parseInt(tileNow.id[1]);
+        var col = parseInt(tileNow.id[2]);
+        gameboard[row][col] = turn;
+        for(var i = 0;i <3;i++)
+        {
+            if(gameboard[row][i]!=turn)
+            {
+                break;
+            }
+            if(i===2)
+            {
+                console.log(turn + "wins!");
+                gameover = true;
+                cause += "win";
+                summondialog(`${turn} Wins Congratultions`);
+                
+            }
+        }
+        //row check
+        for(var i = 0;i <3;i++)
+        {
+            if(gameboard[i][col]!=turn)
+            {
+                break;
+            }
+            if(i===2)
+            {
+                console.log(turn + "wins!");
+                gameover = true;
+                cause += "win";
+                summondialog(`${turn} Wins Congratultions`);
+                
+            }
+        }
+        //diag check
+        if(row===col)
+        {
+            for(var i = 0;i <3;i++)
+            {
+                if(gameboard[i][i]!=turn)
+                {
+                    break;
+                }
+                if(i===2)
+                {
+                    console.log(turn + "wins!");
+                    gameover = true;
+                    cause += "win";
+                    summondialog(`${turn} Wins Congratultions`);
+                    
+                }
+            }
+        }
+        if(row+col===2)
+        {
+            for(var i = 0;i <3;i++)
+            {
+                if(gameboard[i][2-i]!=turn)
+                {
+                    break;
+                }
+                if(i===2)
+                {
+                    console.log(turn + " wins!");
+                    gameover = true;
+                    cause += "win";
+                    summondialog(`${turn} Wins Congratultions`);
+                    
+                }
+            }
+        }
+        
+        movecount = movecount+1;
+        if(movecount === 9)
+        {
+            gameover = true;
+            cause += "draw";
+            summondialog(`It's a draw! You both Lose!`);
+            
+        }
+        updateUI();
+        changeTurn();
+        if(gameover)
+        {
+            reset();
+
+        }
+        
+
+    }
     const reset = async ()=>
     {
         await updateUI();
@@ -43,7 +149,7 @@ const game =(()=>{
                 tile.id ="E" +row.toString() + col.toString();
             })
         gameover = false;
-        document.querySelector(".turn").innerText= "It's Player X's turn";
+        // document.querySelector(".turn").innerText= "It's Player X's turn";
     }
     const update = (event) =>
     {   
@@ -148,6 +254,10 @@ const game =(()=>{
             reset();
 
         }
+        else{
+            aiMoveRandom();
+        }
+        
 
     }
     const getTurn = () =>
@@ -183,8 +293,9 @@ const game =(()=>{
                
                 
             })
-            var turnUI = document.querySelector(".turn");
-            turnUI.innerHTML = `It's Player ${turn}'s turn`;
+            //Vs AI so this is not needed as X will always go first
+            // var turnUI = document.querySelector(".turn");
+            // turnUI.innerHTML = `It's Player ${turn}'s turn`;
         
     }
     return {update, getGO,getTurn,getCause};
