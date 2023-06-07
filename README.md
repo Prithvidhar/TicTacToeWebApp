@@ -5,4 +5,4 @@
 - Ability to detect game over states like draws and wins
 ### Future improvements I plan to implement:
 - ~Responsive design~ **Implemented**
-- AI opponent
+- AI opponent (Random move opponent added)
