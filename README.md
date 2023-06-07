@@ -4,5 +4,5 @@
 - Buttons to allow players to mark tiles
 - Ability to detect game over states like draws and wins
 ### Future improvements I plan to implement:
-- Responsive design
+- ~Responsive design~ **Implemented**
 - AI opponent
